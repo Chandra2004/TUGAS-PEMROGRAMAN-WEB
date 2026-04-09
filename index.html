@@ -28,6 +28,9 @@
     .animate-fade-in {
       animation: fadeIn 0.8s ease-out forwards;
     }
+    .glow-text {
+      text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+    }
   </style>
 </head>
 
@@ -36,17 +39,25 @@
     <div class="bg-gray-900/80 backdrop-blur-md border border-gray-700/50 rounded-2xl shadow-2xl shadow-primary/20 overflow-hidden transition-all hover:shadow-primary/40">
       
       <div class="bg-gradient-to-r from-primary/20 to-blue-600/10 px-8 py-10 text-center relative">
-        <div id="greeting" class="text-[10px] font-bold text-primary border border-primary/30 px-2 py-1 rounded-full inline-block mb-4 tracking-widest uppercase bg-primary/5">
-          Loading...
+        <div class="flex flex-col items-center gap-2 mb-4">
+          <div id="greeting-badge" class="text-[10px] font-bold text-primary border border-primary/30 px-3 py-1 rounded-full tracking-widest uppercase bg-primary/5">
+            INITIALIZING...
+          </div>
+          <div id="realtime-clock" class="text-2xl font-mono font-bold text-white glow-text">
+            00:00:00
+          </div>
+          <div id="realtime-date" class="text-[11px] text-gray-400 tracking-tighter uppercase">
+            Loading Date...
+          </div>
         </div>
         
-        <h1 class="text-3xl md:text-4xl font-bold text-primary tracking-tight">
+        <h1 class="text-3xl font-bold text-primary tracking-tight">
           Tugas Pemrograman Web
         </h1>
-        <p class="mt-3 text-lg text-gray-300 font-medium">
+        <p class="mt-2 text-lg text-gray-300 font-medium">
           Chandra Tri Antomo
         </p>
-        <p class="mt-1 text-sm text-gray-400">
+        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">
           Informatika • Semester 4
         </p>
       </div>
@@ -54,7 +65,6 @@
       <div class="p-8">
         <div class="space-y-6">
           <a href="TUGAS-1/index.html" 
-             id="task1"
              class="group block bg-gray-800/50 hover:bg-gray-700/60 border border-gray-600 hover:border-primary/60 rounded-xl p-6 transition-all duration-300 active:scale-95 hover:shadow-lg hover:shadow-primary/10">
             <div class="flex items-center justify-between">
               <div>
@@ -96,25 +106,32 @@
   </div>
 
   <script>
-    function setGreeting() {
-      const hours = new Date().getHours();
-      const greetingElement = document.getElementById('greeting');
-      let message;
+    function updateRealtimeInfo() {
+      const now = new Date();
+      
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('realtime-clock').innerText = `${hours}:${minutes}:${seconds}`;
 
-      if (hours < 11) message = "Selamat Pagi 🌅";
-      else if (hours < 15) message = "Selamat Siang ☀️";
-      else if (hours < 19) message = "Selamat Sore 🌇";
-      else message = "Selamat Malam 🌙";
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('realtime-date').innerText = now.toLocaleDateString('id-ID', options);
 
-      greetingElement.innerText = message;
+      const hour = now.getHours();
+      let greet;
+      if (hour < 11) greet = "Selamat Pagi 🌅";
+      else if (hour < 15) greet = "Selamat Siang ☀️";
+      else if (hour < 19) greet = "Selamat Sore 🌇";
+      else greet = "Selamat Malam 🌙";
+      
+      const badge = document.getElementById('greeting-badge');
+      if (badge.innerText !== greet) {
+        badge.innerText = greet;
+      }
     }
 
-    const taskLink = document.getElementById('task1');
-    taskLink.addEventListener('click', (e) => {
-      console.log("Navigating...");
-    });
-
-    window.onload = setGreeting;
+    setInterval(updateRealtimeInfo, 1000);
+    updateRealtimeInfo();
   </script>
 </body>
 </html>
