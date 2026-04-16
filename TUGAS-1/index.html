@@ -3,184 +3,180 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>Curriculum Vitae | Chandra Tri Antomo</title>
+    <title>CV Chandra Tri Antomo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              darkBg: '#0f172a',
+              darkCard: '#1e293b',
+            }
+          }
+        }
+      }
+    </script>
     <style>
-      html { scroll-behavior: smooth; }
-      ::selection { background: #06b6d4; color: white; }
-      
-      body { transition: background-color 0.5s ease, color 0.5s ease; }
-      .cv-card { transition: background-color 0.5s ease, transform 0.3s ease; }
+      * { transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+      .reveal { transition: all 0.8s ease-out; }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      .profile-img { animation: float 4s ease-in-out infinite; }
     </style>
   </head>
-  <body class="bg-gray-100 font-sans text-gray-900">
+  <body class="bg-slate-50 dark:bg-darkBg text-slate-800 dark:text-slate-200 font-sans">
 
-    <div class="fixed top-5 right-5 z-50">
-      <button id="darkToggle" class="bg-white dark:bg-gray-800 p-3 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all border border-gray-200">
-        <span id="darkIcon" class="text-xl">🌙</span>
+    <div class="fixed top-6 right-6 z-50">
+      <button id="darkToggle" class="p-3 rounded-2xl bg-white dark:bg-darkCard shadow-xl border border-slate-200 dark:border-slate-700 hover:scale-110 active:scale-95 transition-transform">
+        <span id="darkIcon" class="text-2xl">🌙</span>
       </button>
     </div>
 
-    <div class="max-w-4xl mx-auto my-10 px-4">
-      <div id="cvCard" class="cv-card bg-white shadow-2xl rounded-2xl p-8 md:p-12">
+    <div class="max-w-4xl mx-auto my-12 px-6">
+      <div id="cvCard" class="bg-white dark:bg-darkCard shadow-2xl rounded-[2rem] overflow-hidden border border-transparent dark:border-slate-700">
         
-        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 border-b pb-8">
-          <img src="SBY1539.JPG" alt="Profile Picture"
-            class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:rotate-6 transition-transform" />
-          <div class="text-center md:text-left">
-            <h1 id="nameHeader" class="text-3xl font-extrabold text-gray-800 transition-colors">Chandra Tri Antomo</h1>
-            <p class="text-cyan-600 font-medium text-lg">Graphics Designer | Informatics Engineering Student</p>
-            <p class="text-sm text-gray-500 mt-1 flex items-center justify-center md:justify-start">
-              📍 Surabaya, Jawa Timur
-            </p>
-          </div>
-        </div>
+        <div class="h-3 bg-gradient-to-r from-cyan-500 to-blue-600"></div>
 
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="contact-item p-3 rounded-lg hover:bg-cyan-50 transition-colors cursor-pointer" data-copy="+6285730676143">
-            <p><strong>📱 WhatsApp:</strong> <span class="text-gray-700">+6285730676143</span></p>
-          </div>
-          <div class="contact-item p-3 rounded-lg hover:bg-cyan-50 transition-colors cursor-pointer" data-copy="chandratriantomo123@gmail.com">
-            <p><strong>📧 Email:</strong> <span class="text-gray-700">chandratriantomo123@gmail.com</span></p>
-          </div>
-          <div class="p-3">
-            <p><strong>👤 Usia:</strong> <span class="text-gray-700">21 tahun</span></p>
-          </div>
-          <div class="p-3">
-            <p><strong>🚹 Gender:</strong> <span class="text-gray-700">Laki-laki</span></p>
-          </div>
-        </div>
-
-        <div class="space-y-10 mt-10">
-          
-          <section class="reveal">
-            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Tentang Saya</h2>
-            <p class="text-gray-700 leading-relaxed italic">
-              Graphic Designer profesional dengan pengalaman lebih dari 2 tahun dalam merancang desain visual yang strategis, komunikatif, dan berorientasi pada kebutuhan brand. Menguasai Adobe Illustrator, Photoshop, CorelDRAW, Affinity Designer, dan Canva. Didukung pemahaman dasar pemrograman web (PHP, JavaScript, Python, Java, C++) untuk kolaborasi lintas tim dan implementasi digital.
-            </p>
-          </section>
-
-          <section class="reveal">
-            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Pengalaman Kerja</h2>
-            <div class="space-y-4 border-l-2 border-cyan-100 pl-5 ml-2">
-              <div class="relative">
-                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
-                <h3 class="font-bold">Graphics Designer</h3>
-                <p class="text-sm text-gray-500">PT. Generasi Baru Digital | Sep 2023 - Des 2025</p>
-              </div>
-              <div class="relative">
-                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
-                <h3 class="font-bold">Tim Operasional</h3>
-                <p class="text-sm text-gray-500">KAMI Digital Printing | Apr 2023 - Agu 2023</p>
-              </div>
-              <div class="relative">
-                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
-                <h3 class="font-bold">Siswa Magang</h3>
-                <p class="text-sm text-gray-500">PT Telkom Indonesia | Feb 2022 - Apr 2022</p>
+        <div class="p-8 md:p-12">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-8 border-b border-slate-100 dark:border-slate-700 pb-10">
+            <div class="relative">
+              <img src="SBY1539.JPG" alt="Chandra" class="profile-img w-36 h-36 rounded-3xl object-cover border-4 border-white dark:border-slate-800 shadow-2xl" />
+              <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 border-4 border-white dark:border-slate-800 rounded-full"></div>
+            </div>
+            
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Chandra Tri Antomo</h1>
+              <p class="text-cyan-600 dark:text-cyan-400 font-bold text-lg mt-1">Informatics Engineering & Graphic Designer</p>
+              <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span>📍 Surabaya, ID</span>
+                <span>🎂 21 Years Old</span>
+                <span>🎓 ITATS Student</span>
               </div>
             </div>
-          </section>
+          </div>
 
-          <section class="reveal">
-            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Pendidikan</h2>
-            <ul class="space-y-2 text-gray-700">
-              <li><strong>S1 Teknik Informatika</strong> – ITATS (2024 - 2028)</li>
-              <li><strong>SMK Multimedia</strong> – SMK GIKI 1 Surabaya (2020 - 2022)</li>
-            </ul>
-          </section>
-
-          <section class="reveal">
-            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Skills</h2>
-            <div class="flex flex-wrap gap-3">
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Adobe Illustrator</span>
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Adobe Photoshop</span>
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">CorelDRAW</span>
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">UI/UX Design</span>
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Laravel & Tailwind</span>
-              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">PHP & Python (Basic)</span>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+            <div class="contact-card group p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 cursor-pointer hover:border-cyan-500 dark:hover:border-cyan-400 transition-all" data-copy="+6285730676143">
+              <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">WhatsApp</p>
+              <p class="text-lg font-semibold group-hover:text-cyan-600 dark:group-hover:text-cyan-400">+62 857-3067-6143</p>
             </div>
-          </section>
-
-          <section class="reveal">
-            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3 text-center md:text-left">🌐 Media Sosial</h2>
-            <div class="flex justify-center md:justify-start space-x-6">
-              <a href="https://github.com/Chandra2004" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30" alt="Github"></a>
-              <a href="https://www.instagram.com/chandratriantomo.2077/" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="30" alt="Instagram"></a>
-              <a href="https://www.facebook.com/ChandraTriAntomo/" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" width="30" alt="Facebook"></a>
+            <div class="contact-card group p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700 cursor-pointer hover:border-cyan-500 dark:hover:border-cyan-400 transition-all" data-copy="chandratriantomo123@gmail.com">
+              <p class="text-xs text-slate-400 uppercase tracking-widest font-bold">Email Address</p>
+              <p class="text-lg font-semibold group-hover:text-cyan-600 dark:group-hover:text-cyan-400">chandratriantomo123@gmail.com</p>
             </div>
-          </section>
+          </div>
 
+          <div class="mt-12 space-y-12">
+            <section class="reveal">
+              <div class="flex items-center gap-4 mb-4">
+                <h2 class="text-xl font-bold dark:text-white">Tentang Saya</h2>
+                <div class="h-[2px] flex-1 bg-slate-100 dark:bg-slate-700"></div>
+              </div>
+              <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                Graphic Designer profesional dengan pengalaman lebih dari 2 tahun. Memiliki keahlian kuat di ekosistem <span class="text-cyan-600 dark:text-cyan-400 font-bold">Adobe & Corel</span>, dipadukan dengan latar belakang pendidikan <span class="text-cyan-600 dark:text-cyan-400 font-bold">Teknik Informatika</span>.
+              </p>
+            </section>
+
+            <section class="reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold dark:text-white">Pengalaman</h2>
+                <div class="h-[2px] flex-1 bg-slate-100 dark:bg-slate-700"></div>
+              </div>
+              <div class="space-y-8">
+                <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
+                  <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
+                  <h3 class="font-bold text-lg dark:text-white">Graphics Designer</h3>
+                  <p class="text-cyan-600 dark:text-cyan-400 text-sm font-bold">PT. Generasi Baru Digital • 2023 - 2025</p>
+                </div>
+                <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700">
+                  <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+                  <h3 class="font-bold text-lg dark:text-white">Siswa Magang</h3>
+                  <p class="text-slate-500 text-sm">PT Telkom Indonesia • 2022</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="reveal">
+              <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-xl font-bold dark:text-white">Tech & Design Stack</h2>
+                <div class="h-[2px] flex-1 bg-slate-100 dark:bg-slate-700"></div>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <span class="px-5 py-2 rounded-xl bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 border border-cyan-100 dark:border-cyan-800 font-bold text-sm">Adobe Illustrator</span>
+                <span class="px-5 py-2 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border border-blue-100 dark:border-blue-800 font-bold text-sm">Photoshop</span>
+                <span class="px-5 py-2 rounded-xl bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 border border-orange-100 dark:border-orange-800 font-bold text-sm">CorelDRAW</span>
+                <span class="px-5 py-2 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-800 font-bold text-sm">Laravel & PHP</span>
+              </div>
+            </section>
+
+            <div class="flex justify-center gap-6 pt-6 reveal">
+                <a href="https://github.com/Chandra2004" target="_blank" class="p-3 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-cyan-500 dark:hover:bg-cyan-500 hover:text-white transition-all">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+          </div>
         </div>
       </div>
-      
-      <footer class="mt-10 text-center text-gray-400 text-sm">
-        <p>&copy; 2026 Chandra Tri Antomo. Built with ❤️ & Tailwind</p>
+
+      <footer class="mt-8 text-center text-slate-400 dark:text-slate-600 text-sm font-medium">
+        &copy; 2026 Chandra Tri Antomo
       </footer>
     </div>
 
     <script>
       const darkToggle = document.getElementById('darkToggle');
       const darkIcon = document.getElementById('darkIcon');
-      const cvCard = document.getElementById('cvCard');
-      const nameHeader = document.getElementById('nameHeader');
+      
+      const enableDarkMode = () => {
+        document.documentElement.classList.add('dark');
+        darkIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      };
+
+      const disableDarkMode = () => {
+        document.documentElement.classList.remove('dark');
+        darkIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      };
+
+      if (localStorage.getItem('theme') === 'dark') enableDarkMode();
 
       darkToggle.addEventListener('click', () => {
-        document.body.classList.toggle('bg-gray-900');
-        cvCard.classList.toggle('bg-gray-800');
-        cvCard.classList.toggle('text-white');
-        cvCard.classList.toggle('shadow-cyan-500/20');
-        nameHeader.classList.toggle('text-white');
-        nameHeader.classList.toggle('text-gray-800');
-
-        if (document.body.classList.contains('bg-gray-900')) {
-          darkIcon.textContent = '☀️';
-          document.documentElement.classList.add('dark');
-        } else {
-          darkIcon.textContent = '🌙';
-          document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.contains('dark') ? disableDarkMode() : enableDarkMode();
       });
 
-      document.querySelectorAll('.contact-item').forEach(item => {
-        item.addEventListener('click', () => {
-          const textToCopy = item.getAttribute('data-copy');
-          navigator.clipboard.writeText(textToCopy);
-          
-          const originalContent = item.innerHTML;
-          item.innerHTML = `<p class="text-cyan-500 font-bold animate-pulse">✅ Berhasil Disalin!</p>`;
-          
-          setTimeout(() => {
-            item.innerHTML = originalContent;
-          }, 1500);
+      document.querySelectorAll('.contact-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const text = card.getAttribute('data-copy');
+          navigator.clipboard.writeText(text).then(() => {
+            const label = card.querySelector('p:first-child');
+            const originalLabel = label.textContent;
+            label.textContent = "✅ Copied!";
+            label.classList.add('text-green-500');
+            setTimeout(() => {
+              label.textContent = originalLabel;
+              label.classList.remove('text-green-500');
+            }, 2000);
+          });
         });
       });
 
-      const observerOptions = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('opacity-100', 'translate-y-0');
-            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
           }
         });
-      }, observerOptions);
+      }, { threshold: 0.1 });
 
       document.querySelectorAll('.reveal').forEach(el => {
-        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        el.classList.add('opacity-0', 'translate-y-8');
         observer.observe(el);
-      });
-
-      document.querySelectorAll('.skill-badge').forEach(badge => {
-        badge.addEventListener('mouseover', () => {
-          badge.classList.replace('bg-gray-100', 'bg-cyan-500');
-          badge.classList.replace('text-gray-700', 'white');
-          badge.classList.add('scale-110', 'text-white', 'shadow-lg');
-        });
-        badge.addEventListener('mouseout', () => {
-          badge.classList.replace('bg-cyan-500', 'bg-gray-100');
-          badge.classList.replace('text-white', 'text-gray-700');
-          badge.classList.remove('scale-110', 'shadow-lg');
-        });
       });
     </script>
   </body>
