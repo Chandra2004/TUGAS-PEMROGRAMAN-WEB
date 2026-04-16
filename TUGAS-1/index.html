@@ -3,74 +3,185 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
-    <title>Data Riwayat Hidup</title>
+    <title>Curriculum Vitae | Chandra Tri Antomo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { scroll-behavior: smooth; }
+      ::selection { background: #06b6d4; color: white; }
+      
+      body { transition: background-color 0.5s ease, color 0.5s ease; }
+      .cv-card { transition: background-color 0.5s ease, transform 0.3s ease; }
+    </style>
   </head>
-  <body class="bg-gray-100 font-sans">
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-10">
-      <div class="flex items-center space-x-6">
-        <img src="SBY1539.JPG" alt="Profile Picture"
-          class="w-28 h-28 rounded-full border-4 border-cyan-500" />
-        <div>
-          <h1 class="text-2xl font-bold text-gray-800">Chandra Tri Antomo</h1>
-          <p class="text-gray-600">Graphics Designer | Informatics Engineering Student</p>
-          <p class="text-sm text-gray-500">Surabaya, Jawa Timur</p>
-        </div>
-      </div>
+  <body class="bg-gray-100 font-sans text-gray-900">
 
-      <div class="mt-6 grid grid-cols-2 gap-4 text-gray-700">
-        <p><strong>📱 WhatsApp:</strong> +6285730676143</p>
-        <p><strong>📧 Email:</strong> chandratriantomo123@gmail.com</p>
-        <p><strong>👤 Usia:</strong> 21 tahun</p>
-        <p><strong>🚹 Gender:</strong> Laki-laki</p>
-      </div>
-
-      <div class="mt-8">
-        <h2 class="text-xl font-semibold text-cyan-600">Tentang Saya</h2>
-        <p class="mt-2 text-gray-700 leading-relaxed">
-          Graphic Designer profesional dengan pengalaman lebih dari 2 tahun dalam merancang desain visual yang strategis, komunikatif, dan berorientasi pada kebutuhan brand. Menguasai Adobe Illustrator, Photoshop, CorelDRAW, Affinity Designer, dan Canva. Didukung pemahaman dasar pemrograman web (PHP, JavaScript, Python, Java, C++) untuk kolaborasi lintas tim dan implementasi digital.
-        </p>
-      </div>
-
-      <div class="mt-8">
-        <h2 class="text-xl font-semibold text-cyan-600">Pengalaman Kerja</h2>
-        <ul class="mt-2 space-y-2 text-gray-700">
-          <li><strong>Graphics Designer</strong> – PT. Generasi Baru Digital (Sep 2023 - Des 2025)</li>
-          <li><strong>Tim Operasional</strong> – KAMI Digital Printing (Apr 2023 - Agu 2023)</li>
-          <li><strong>Siswa Magang</strong> – PT Telkom Indonesia (Feb 2022 - Apr 2022)</li>
-        </ul>
-      </div>
-
-      <div class="mt-8">
-        <h2 class="text-xl font-semibold text-cyan-600">Pendidikan</h2>
-        <ul class="mt-2 space-y-2 text-gray-700">
-          <li><strong>S1 Teknik Informatika</strong> – Institut Teknologi Adhi Tama Surabaya (2024 - 2028)</li>
-          <li><strong>SMK Multimedia</strong> – SMK GIKI 1 Surabaya (2020 - 2022)</li>
-          <li><strong>SMPN 59 Surabaya</strong> (2017 - 2019)</li>
-          <li><strong>SDN Kebraon 1 Surabaya</strong> (2011 - 2016)</li>
-        </ul>
-      </div>
-
-      <div class="mt-8">
-        <h2 class="text-xl font-semibold text-cyan-600">Skills</h2>
-        <div class="flex flex-wrap gap-2 mt-2">
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">Adobe Illustrator</span>
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">Adobe Photoshop</span>
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">CorelDRAW</span>
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">PHP & Python (Basic)</span>
-          <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-sm">Video Editing</span>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <h2 class="text-xl font-semibold text-cyan-600">🌐 Media Sosial</h2>
-        <div class="flex space-x-4 mt-2">
-          <a href="https://www.facebook.com/ChandraTriAntomo/" class="text-blue-600 font-bold">Facebook</a>
-          <a href="https://github.com/Chandra2004" class="text-gray-800 font-bold">GitHub</a>
-          <a href="https://www.instagram.com/chandratriantomo.2077/" class="text-pink-600 font-bold">Instagram</a>
-        </div>
-      </div>
+    <div class="fixed top-5 right-5 z-50">
+      <button id="darkToggle" class="bg-white dark:bg-gray-800 p-3 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all border border-gray-200">
+        <span id="darkIcon" class="text-xl">🌙</span>
+      </button>
     </div>
+
+    <div class="max-w-4xl mx-auto my-10 px-4">
+      <div id="cvCard" class="cv-card bg-white shadow-2xl rounded-2xl p-8 md:p-12">
+        
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 border-b pb-8">
+          <img src="SBY1539.JPG" alt="Profile Picture"
+            class="w-32 h-32 rounded-full border-4 border-cyan-500 shadow-lg object-cover hover:rotate-6 transition-transform" />
+          <div class="text-center md:text-left">
+            <h1 id="nameHeader" class="text-3xl font-extrabold text-gray-800 transition-colors">Chandra Tri Antomo</h1>
+            <p class="text-cyan-600 font-medium text-lg">Graphics Designer | Informatics Engineering Student</p>
+            <p class="text-sm text-gray-500 mt-1 flex items-center justify-center md:justify-start">
+              📍 Surabaya, Jawa Timur
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="contact-item p-3 rounded-lg hover:bg-cyan-50 transition-colors cursor-pointer" data-copy="+6285730676143">
+            <p><strong>📱 WhatsApp:</strong> <span class="text-gray-700">+6285730676143</span></p>
+          </div>
+          <div class="contact-item p-3 rounded-lg hover:bg-cyan-50 transition-colors cursor-pointer" data-copy="chandratriantomo123@gmail.com">
+            <p><strong>📧 Email:</strong> <span class="text-gray-700">chandratriantomo123@gmail.com</span></p>
+          </div>
+          <div class="p-3">
+            <p><strong>👤 Usia:</strong> <span class="text-gray-700">21 tahun</span></p>
+          </div>
+          <div class="p-3">
+            <p><strong>🚹 Gender:</strong> <span class="text-gray-700">Laki-laki</span></p>
+          </div>
+        </div>
+
+        <div class="space-y-10 mt-10">
+          
+          <section class="reveal">
+            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Tentang Saya</h2>
+            <p class="text-gray-700 leading-relaxed italic">
+              Graphic Designer profesional dengan pengalaman lebih dari 2 tahun dalam merancang desain visual yang strategis, komunikatif, dan berorientasi pada kebutuhan brand. Menguasai Adobe Illustrator, Photoshop, CorelDRAW, Affinity Designer, dan Canva. Didukung pemahaman dasar pemrograman web (PHP, JavaScript, Python, Java, C++) untuk kolaborasi lintas tim dan implementasi digital.
+            </p>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Pengalaman Kerja</h2>
+            <div class="space-y-4 border-l-2 border-cyan-100 pl-5 ml-2">
+              <div class="relative">
+                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
+                <h3 class="font-bold">Graphics Designer</h3>
+                <p class="text-sm text-gray-500">PT. Generasi Baru Digital | Sep 2023 - Des 2025</p>
+              </div>
+              <div class="relative">
+                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
+                <h3 class="font-bold">Tim Operasional</h3>
+                <p class="text-sm text-gray-500">KAMI Digital Printing | Apr 2023 - Agu 2023</p>
+              </div>
+              <div class="relative">
+                <div class="absolute -left-[29px] top-1 w-4 h-4 bg-cyan-500 rounded-full border-4 border-white"></div>
+                <h3 class="font-bold">Siswa Magang</h3>
+                <p class="text-sm text-gray-500">PT Telkom Indonesia | Feb 2022 - Apr 2022</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Pendidikan</h2>
+            <ul class="space-y-2 text-gray-700">
+              <li><strong>S1 Teknik Informatika</strong> – ITATS (2024 - 2028)</li>
+              <li><strong>SMK Multimedia</strong> – SMK GIKI 1 Surabaya (2020 - 2022)</li>
+            </ul>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3">Skills</h2>
+            <div class="flex flex-wrap gap-3">
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Adobe Illustrator</span>
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Adobe Photoshop</span>
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">CorelDRAW</span>
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">UI/UX Design</span>
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">Laravel & Tailwind</span>
+              <span class="skill-badge bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-semibold border border-gray-200 cursor-default transition-all">PHP & Python (Basic)</span>
+            </div>
+          </section>
+
+          <section class="reveal">
+            <h2 class="text-xl font-bold text-cyan-600 uppercase tracking-wider mb-3 text-center md:text-left">🌐 Media Sosial</h2>
+            <div class="flex justify-center md:justify-start space-x-6">
+              <a href="https://github.com/Chandra2004" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="30" alt="Github"></a>
+              <a href="https://www.instagram.com/chandratriantomo.2077/" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" width="30" alt="Instagram"></a>
+              <a href="https://www.facebook.com/ChandraTriAntomo/" target="_blank" class="hover:scale-110 transition-transform"><img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" width="30" alt="Facebook"></a>
+            </div>
+          </section>
+
+        </div>
+      </div>
+      
+      <footer class="mt-10 text-center text-gray-400 text-sm">
+        <p>&copy; 2026 Chandra Tri Antomo. Built with ❤️ & Tailwind</p>
+      </footer>
+    </div>
+
+    <script>
+      const darkToggle = document.getElementById('darkToggle');
+      const darkIcon = document.getElementById('darkIcon');
+      const cvCard = document.getElementById('cvCard');
+      const nameHeader = document.getElementById('nameHeader');
+
+      darkToggle.addEventListener('click', () => {
+        document.body.classList.toggle('bg-gray-900');
+        cvCard.classList.toggle('bg-gray-800');
+        cvCard.classList.toggle('text-white');
+        cvCard.classList.toggle('shadow-cyan-500/20');
+        nameHeader.classList.toggle('text-white');
+        nameHeader.classList.toggle('text-gray-800');
+
+        if (document.body.classList.contains('bg-gray-900')) {
+          darkIcon.textContent = '☀️';
+          document.documentElement.classList.add('dark');
+        } else {
+          darkIcon.textContent = '🌙';
+          document.documentElement.classList.remove('dark');
+        }
+      });
+
+      document.querySelectorAll('.contact-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const textToCopy = item.getAttribute('data-copy');
+          navigator.clipboard.writeText(textToCopy);
+          
+          const originalContent = item.innerHTML;
+          item.innerHTML = `<p class="text-cyan-500 font-bold animate-pulse">✅ Berhasil Disalin!</p>`;
+          
+          setTimeout(() => {
+            item.innerHTML = originalContent;
+          }, 1500);
+        });
+      });
+
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+      });
+
+      document.querySelectorAll('.skill-badge').forEach(badge => {
+        badge.addEventListener('mouseover', () => {
+          badge.classList.replace('bg-gray-100', 'bg-cyan-500');
+          badge.classList.replace('text-gray-700', 'white');
+          badge.classList.add('scale-110', 'text-white', 'shadow-lg');
+        });
+        badge.addEventListener('mouseout', () => {
+          badge.classList.replace('bg-cyan-500', 'bg-gray-100');
+          badge.classList.replace('text-white', 'text-gray-700');
+          badge.classList.remove('scale-110', 'shadow-lg');
+        });
+      });
+    </script>
   </body>
 </html>
